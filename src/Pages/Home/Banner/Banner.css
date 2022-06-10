@@ -1,0 +1,16 @@
+.banner{
+    background-image: url("../../../images/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    height: 450px;
+}
+.banner-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.banner-content h2{
+    margin-top: 150px;
+}

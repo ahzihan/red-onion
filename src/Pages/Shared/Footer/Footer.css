@@ -1,0 +1,11 @@
+.big-footer{
+    background-color: rgb(27, 20, 20);
+    color: white;
+}
+.footer-content p{
+    margin-bottom: 0;
+}
+.footer{
+    background-color: black;
+    color: white;
+}
