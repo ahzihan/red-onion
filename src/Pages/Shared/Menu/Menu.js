@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import './Menu.css';
 
 const Menu = () => {
   return (
@@ -10,7 +11,7 @@ const Menu = () => {
           <Nav.Link as={Link} to="/breakfast">
             Breakfast
           </Nav.Link>
-          <Nav.Link as={Link} to="/lunch">
+          <Nav.Link as={Link} to="/lunch" active>
             Lunch
           </Nav.Link>
           <Nav.Link as={Link} to="/dinner">
