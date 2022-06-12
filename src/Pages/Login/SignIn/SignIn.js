@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from "../../../firebase.init";
 import logo2 from "../../../images/logo2.png";
 import Social from "../Social/Social";
-import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 import './SignIn.css';
 
 const SignIn = () => {
@@ -16,6 +16,7 @@ const SignIn = () => {
   const [ sendPasswordResetEmail, sending ] = useSendPasswordResetEmail( auth );
 
   const from = location.state?.from?.pathname || "/";
+
   if ( user ) {
     navigate( from, { replace: true } );
   }
@@ -26,9 +27,9 @@ const SignIn = () => {
     const email = emailRef.current.value;
     if ( email ) {
       await sendPasswordResetEmail( email );
-      toast( 'Sent email' );
+      toast.success('Email sent successfully');
     } else {
-      toast( 'Please Enter your email address.' );
+      toast.error( 'Please Enter your email address.' );
     }
 
   };
@@ -71,7 +72,10 @@ const SignIn = () => {
           <p className="px-2 mt-2">Or</p>
           <div style={{ height: '1px' }} className="bg-dark w-50"></div>
         </div>
-        <ToastContainer />
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
       </Form>
       <Social></Social>
     </div>

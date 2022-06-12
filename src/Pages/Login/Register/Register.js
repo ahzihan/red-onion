@@ -6,7 +6,7 @@ import logo2 from "../../../images/logo2.png";
 import Social from "../Social/Social";
 
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
   const location = useLocation();
@@ -34,7 +34,7 @@ const Register = () => {
     }
     await createUserWithEmailAndPassword( email, password );
     await updateProfile( { displayName: name } );
-    toast( 'Updated profile' );
+    toast.success( 'Updated profile' );
     navigate( from, { replace: true } );
 
   };
@@ -74,7 +74,10 @@ const Register = () => {
           <p className="px-2 mt-2">Or</p>
           <div style={{ height: '1px' }} className="bg-dark w-50"></div>
         </div>
-        <ToastContainer />
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
       </Form>
       <Social></Social>
     </div>
