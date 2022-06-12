@@ -1,12 +1,14 @@
 import React from "react";
-import Menu from "../Shared/Menu/Menu";
 import Banner from "./Banner/Banner";
+import Lunch from "./Lunch/Lunch";
+import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <Menu></Menu>
+      <Lunch></Lunch>
+      <Testimonial></Testimonial>
     </div>
   );
 };

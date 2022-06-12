@@ -1,9 +1,14 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './CardStyle.css';
 
 const LunchDetails = ( { lunch } ) => {
-    const { title, description, price, image } = lunch;
+    const { id, title, description, price, image } = lunch;
+    const navigate = useNavigate();
+    const handleLunch = id => {
+        navigate( `/SingleItem/${ id }` );
+    };
     return (
         <Card className='card-container'>
             <Card.Img variant="top" src={image} />
@@ -13,7 +18,7 @@ const LunchDetails = ( { lunch } ) => {
                     {description}
                 </Card.Text>
                 <Card.Text>Price: ${price}</Card.Text>
-                <Button variant="primary">Details</Button>
+                <Button onClick={() => handleLunch( id )} variant="primary">Details</Button>
             </Card.Body>
         </Card>
     );
